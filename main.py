@@ -10,6 +10,23 @@ app = FastAPI()
 tem= Jinja2Templates(directory=".")
 app.mount("/style", StaticFiles(directory="style"), name="style")
 
+def init_db():
+    conn = sqlite3.connect("data.db")
+    con = conn.cursor()
+
+    con.execute('''
+        CREATE TABLE IF NOT EXISTS d (
+            name TEXT,
+            password TEXT,
+            m TEXT
+        )
+    ''')
+    
+    conn.commit()
+    conn.close()
+
+init_db()
+
 def ceak(n,p):
     conn=sqlite3.connect("data.db")
     con=conn.cursor()
