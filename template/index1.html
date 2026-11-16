@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>login home</title>
+        <link rel="stylesheet" href="/style/s1.css">
+    </head>
+    <body>
+        <h1>WELCOME TO ACE</h1>
+        <form action="/login" method="post">
+            <h3>Login To Account</h3>
+            <input type="text" name="user_name" required>
+            <input type="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <h3>{{n if n else ""}}</h3>
+        <form action="/go">
+            <a href="/go">Create a new account</a>
+        </form>
+    </body>
+</html>
